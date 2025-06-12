@@ -30,7 +30,7 @@ def generate_frames(stream):
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
     
 @app.route('/feed')
-async def feeed():
+async def feed():
   global picam2    
   stream = StreamingOutput()
   picam2.start_recording(JpegEncoder(), FileOutput(stream))
