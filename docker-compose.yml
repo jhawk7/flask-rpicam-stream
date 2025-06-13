@@ -1,0 +1,11 @@
+services:
+  picam-stream:
+    build: .
+    image: "jhawk7/flask-picam-stream"
+    ports: 
+      - 5000:5000
+    volumes:
+      - /run/udev:/run/udev:ro # mapping camera since picamera2 module installs only on rpi
+    restart: 'unless-stopped'
+    privileged: true
+
